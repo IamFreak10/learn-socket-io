@@ -1,0 +1,8 @@
+{
+  "name": "prcatice-chat-example",
+  "version": "0.0.1",
+  "description": "About Socket IO",
+  "dependencies": {
+    "express": "^4.22.2"
+  }
+}
