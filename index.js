@@ -15,9 +15,16 @@ io.on('connection', (socket) => {
   // });
 
   console.log('New User connected');
-  setTimeout(function () {
-    socket.send('Mahfj Sends you a message(sending from server)');
-  }, 10000);
+  // setTimeout(function () {
+  //   socket.send('Mahfj Sends you a message(sending from server)');
+  // }, 10000);
+  setInterval(() => {
+    let d = new Date();
+    let t = d.getTime();
+    // socket.send(t);
+    //custom event
+    socket.emit('sendingTime', t);
+  }, 1000);
 });
 server.listen(3300, () => {
   console.log('listening on *:3300');

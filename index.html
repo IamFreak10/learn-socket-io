@@ -61,6 +61,8 @@
     <form id="form" action="">
       <input id="input" autocomplete="off" /><button>Send</button>
     </form> -->
+
+    <h1 id="myTime"></h1>
   </body>
 
   <script src="/socket.io/socket.io.js"></script>
@@ -88,8 +90,10 @@
   </script> -->
   <script>
     let socket = io();
-    socket.on('message', function (msg) {
-      document.write(msg);
+    socket.on('sendingTime', function (msg) {
+      // document.write(msg);
+      document.getElementById('myTime').innerHTML = '';
+      document.getElementById('myTime').innerHTML = msg;
     });
   </script>
 </html>
