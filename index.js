@@ -10,10 +10,15 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
-  });
+  // socket.on('chat message', (msg) => {
+  //   io.emit('chat message', msg);
+  // });
+
+  console.log('New User connected');
+  setTimeout(function () {
+    socket.send('Mahfj Sends you a message(sending from server)');
+  }, 10000);
 });
-server.listen(3000, () => {
-  console.log('listening on *:3000');
+server.listen(3300, () => {
+  console.log('listening on *:3300');
 });
